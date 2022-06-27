@@ -65,7 +65,7 @@ public class DefaultMQPullConsumerTest {
     @Before
     public void init() throws Exception {
         pullConsumer = new DefaultMQPullConsumer(consumerGroup);
-        pullConsumer.setNamesrvAddr("127.0.0.1:9876");
+        pullConsumer.setNamesrvAddr("127.0.0.1:61551");
         pullConsumer.start();
         PullAPIWrapper pullAPIWrapper = pullConsumer.getDefaultMQPullConsumerImpl().getPullAPIWrapper();
         Field field = PullAPIWrapper.class.getDeclaredField("mQClientFactory");
@@ -76,7 +76,7 @@ public class DefaultMQPullConsumerTest {
         field.setAccessible(true);
         field.set(mQClientFactory, mQClientAPIImpl);
 
-        when(mQClientFactory.findBrokerAddressInSubscribe(anyString(), anyLong(), anyBoolean())).thenReturn(new FindBrokerResult("127.0.0.1:10911", false));
+        when(mQClientFactory.findBrokerAddressInSubscribe(anyString(), anyLong(), anyBoolean())).thenReturn(new FindBrokerResult("127.0.0.1:61721", false));
     }
 
     @After

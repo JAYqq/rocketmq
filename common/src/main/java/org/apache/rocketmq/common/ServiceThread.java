@@ -40,6 +40,7 @@ public abstract class ServiceThread implements Runnable {
 
     }
 
+    //类似模板模式，这个方法给子类实现，
     public abstract String getServiceName();
 
     public void start() {

@@ -95,6 +95,7 @@ import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.apache.rocketmq.remoting.exception.RemotingTimeoutException;
 import org.apache.rocketmq.remoting.exception.RemotingTooMuchRequestException;
 
+//todo [Producer]具体实现
 public class DefaultMQProducerImpl implements MQProducerInner {
     private final InternalLogger log = ClientLogger.getLog();
     private final Random random = new Random();
@@ -1354,6 +1355,7 @@ public class DefaultMQProducerImpl implements MQProducerInner {
         this.mQClientFactory.getMQClientAPIImpl().getRemotingClient().setCallbackExecutor(callbackExecutor);
     }
 
+    //这里就是给开发者留一个口子，选择开发者自定义的线程池还是默认线程池
     public ExecutorService getAsyncSenderExecutor() {
         return null == asyncSenderExecutor ? defaultAsyncSenderExecutor : asyncSenderExecutor;
     }

@@ -48,7 +48,7 @@ public class Consumer {
          * }
          * </pre>
          */
-
+        consumer.setNamesrvAddr("127.0.0.1:9876");
         /*
          * Specify where to start in case the specific consumer group is a brand-new one.
          */
@@ -57,7 +57,7 @@ public class Consumer {
         /*
          * Subscribe one more topic to consume.
          */
-        consumer.subscribe("TopicTest", "*");
+        consumer.subscribe("TBW102", "*");
 
         /*
          *  Register callback to execute on arrival of messages fetched from brokers.

@@ -91,7 +91,7 @@ public class DefaultLitePullConsumerTest {
     private OffsetStore offsetStore;
     private DefaultLitePullConsumerImpl litePullConsumerImpl;
     private String consumerGroup = "LitePullConsumerGroup";
-    private String topic = "LitePullConsumerTest";
+    private String topic = "FooBar";
     private String brokerName = "BrokerA";
     private boolean flag = false;
 
