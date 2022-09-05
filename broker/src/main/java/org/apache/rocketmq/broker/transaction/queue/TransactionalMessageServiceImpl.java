@@ -62,6 +62,7 @@ public class TransactionalMessageServiceImpl implements TransactionalMessageServ
 
     @Override
     public CompletableFuture<PutMessageResult> asyncPrepareMessage(MessageExtBrokerInner messageInner) {
+        //调用这个半事务投递方式
         return transactionalMessageBridge.asyncPutHalfMessage(messageInner);
     }
 

@@ -33,6 +33,7 @@ public interface TransactionalMessageService {
     PutMessageResult prepareMessage(MessageExtBrokerInner messageInner);
 
     /**
+     * 看这里的说明，这个消息是prepare状态的消息，是不能真正作为可投递消息存储的
      * Process prepare message in async manner, we should put this message to storage service
      *
      * @param messageInner Prepare(Half) message.
